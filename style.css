@@ -76,4 +76,21 @@
   .dropdown:hover .dropdown-content {display: block;}
   
 
- 
+ /* sign ap styling  */
+
+
+ .sign-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+ }
+.sign-head{
+  margin: 10px 0px;
+}
+ .first-name , .last-name , .email , .password , .confirm-password{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+ }
