@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All blogs show</title>
+    <title>dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -23,19 +23,23 @@
                 <button class="dropbtn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                 <div class="dropdown-content">
                   <a href="#">All Blogs</a>
-                  <a href="./dashboard.html">Dashbord</a>
+                  <a href="#">Dashbord</a>
                   <a href="#">Profile</a>
                 </div>
               </div>
         </div>
 
     </header>
-
-
-
     
+<h1 class="dashboard-head">Dashboard</h1>
 
+<div class="dashboard-main">
+    <input class="dashboard-input" type="text" placeholder="Enter Title..">
+    <br>
+    <textarea class="dashboard-textarea" placeholder="Text.." rows="" cols="180" ></textarea>
+    <button class="publish-blog">Publish Blog</button>
+</div>
 
-    <script type="module" src="blog.js"></script>
+    <script type="module" src="dashboard.js"></script>
 </body>
 </html>
