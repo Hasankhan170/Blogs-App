@@ -15,6 +15,10 @@ signUpForm.addEventListener('submit', (e) => {
         return
     }
 
+    if(password.value !== confirmPassword.value){
+      alert('Passwords do not match')
+      return;
+   }
 
 
 
@@ -24,6 +28,9 @@ signUpForm.addEventListener('submit', (e) => {
     const user = userCredential.user;
 
     console.log(user);
+    alert('User created successfully!')
+
+
 
     window.location = "./login.html"
   })
