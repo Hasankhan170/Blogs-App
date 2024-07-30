@@ -4,8 +4,8 @@ import { auth } from "./config.js"
 const firstName = document.querySelector('.first-name')
 const signUpForm = document.querySelector('#signup-form')
 const lastName = document.querySelector('.last-name')
-const email = document.querySelector('.email')
-const password= document.querySelector('.password')
+const email = document.querySelector('.email-signup')
+const password= document.querySelector('.password-signup')
 const confirmPassword = document.querySelector('.confirm-password')
 
 signUpForm.addEventListener('submit', (e) => {

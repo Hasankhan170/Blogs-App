@@ -36,45 +36,64 @@
     color: black;
 }
 
+
+
+
 /* Dropdown Button */
+
+
 .dropbtn {
-    background-color: transparent;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
+  background-color: transparent;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 0; /* Default position is right */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Media query to change position to left for screens smaller than 786px */
+@media (max-width: 786px) {
   .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+      right: 0; /* Change position to left */
+      left: auto; /* Remove the right position */
   }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
+}
+
 
  /* sign up styling  */
 
@@ -89,7 +108,7 @@
 .sign-head{
   margin: 10px 0px;
 }
- .first-name , .last-name , .email , .password , .confirm-password , .signup-btn{
+ .first-name , .last-name , .email-signup , .password-signup , .confirm-password , .signup-btn{
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -109,8 +128,33 @@
 .login-head{
   margin: 10px 0px;
 }
- .first-name , .last-name , .email , .password , .confirm-password , .login-btn{
+ .first-name , .last-name , .email-login , .password-login, .confirm-password , .login-btn{
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
  }
+
+
+
+
+ /* blog post styling  */
+
+
+ .logout-blog{
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: black;
+ }
+
+
+
+
+
+
+
+
+
+
