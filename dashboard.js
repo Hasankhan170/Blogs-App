@@ -1,9 +1,15 @@
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { collection, addDoc ,getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { db } from "./firebasedatastore.js"
+
+import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+import { auth } from "./config.js"
+
+
 
 const blogForm = document.querySelector('.dashboard-form');
 const dashboardInput = document.querySelector('.dashboard-input');
 const dashboardTextArea = document.querySelector('.dashboard-textarea');
+const logoutBtn = document.querySelector('.logout-blog')
 const renderText= document.querySelector('.my-blogs-render');
 const firstName = localStorage.getItem('name')
 const lastName = localStorage.getItem('last')
@@ -17,13 +23,23 @@ if(!lastName){
 
 let arr = []
 
+async function getRenderData(){
+    const querySnapshot = await getDocs(collection(db, "users"));
+    querySnapshot.forEach((doc) => {
+    arr.push(doc.data())
+});
+    renderData()
+}
+
+getRenderData()
+
 function renderData(){
     dashboardInput.value = ""
     dashboardTextArea.value = ""
     renderText.innerHTML = "";
     console.log(arr)
     arr.map((item)=>{
-        renderText.innerHTML = `
+        renderText.innerHTML += `
         <div class = "under-rendering">
             <div class = "under-title">
                 <img width = "50px" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt = "img">
@@ -64,4 +80,17 @@ blogForm.addEventListener('submit' , async (e)=>{
       }
 
 
+})
+
+
+
+logoutBtn.addEventListener('click' , (e)=>{
+    e.preventDefault()
+
+    signOut(auth).then(() => {
+        window.location = "./index.html"
+        alert('logout successfully!')
+      }).catch((error) => {
+        console.log(error);
+      });
 })
