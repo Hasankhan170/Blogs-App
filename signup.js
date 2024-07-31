@@ -29,9 +29,8 @@ signUpForm.addEventListener('submit', (e) => {
 
     console.log(user);
     alert('User created successfully!')
-
-
-
+    localStorage.setItem('name' , firstName.value)
+    localStorage.setItem('last' , lastName.value)
     window.location = "./login.html"
   })
   .catch((error) => {

@@ -215,8 +215,11 @@
 }
 
 .under-title{
-  display: flex;
-  gap: 30px;
+  gap: 10px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+.under-title p {
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
