@@ -1,4 +1,4 @@
-import { collection, addDoc ,getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { collection, addDoc ,getDocs,Timestamp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { db } from "./firebasedatastore.js"
 
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
@@ -24,7 +24,7 @@ if(!lastName){
 let arr = []
 
 async function getRenderData(){
-    const querySnapshot = await getDocs(collection(db, "users"));
+    const querySnapshot = await getDocs(collection(db, "blogs"));
     querySnapshot.forEach((doc) => {
     arr.push(doc.data())
 });
@@ -37,13 +37,21 @@ function renderData(){
     dashboardInput.value = ""
     dashboardTextArea.value = ""
     renderText.innerHTML = "";
-    console.log(arr)
     arr.map((item)=>{
+        let formattedDate = "N/A"; // Default value if time is not available
+        if(item.time){
+            const date = item.time.toDate();
+            formattedDate = date.toLocaleString('en-us' ,{
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            })
+        }
         renderText.innerHTML += `
         <div class = "under-rendering">
             <div class = "under-title">
                 <img width = "50px" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt = "img">
-                <p>User Name : ${item.Name} ${item.last}</p>
+                <p>User Name : ${item.Name} ${item.last}  || ${formattedDate}</p>
             <div>
                 <h4>${item.title}</h4>
              </div>
@@ -65,7 +73,9 @@ blogForm.addEventListener('submit' , async (e)=>{
         title : dashboardInput.value,
         text : dashboardTextArea.value,
         Name : firstName,
-        last : lastName
+        last : lastName,
+        time: Timestamp.fromDate(new Date()),
+
     }
 
     arr.push(newBlog)
