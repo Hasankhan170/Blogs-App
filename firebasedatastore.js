@@ -15,3 +15,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
+
+
+
+// this file add in git ignore because some privacy issues 

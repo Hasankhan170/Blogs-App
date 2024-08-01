@@ -16,3 +16,6 @@
 
  const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+
+// this file add in git ignore because some privacy issues 
