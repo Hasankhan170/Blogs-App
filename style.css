@@ -212,6 +212,8 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 30px;
   border: 1px solid black;
+  height: auto;
+
 }
 
 .under-title{
@@ -223,3 +225,10 @@
   margin-top: 5px;
   margin-bottom: 15px;
 }
+
+.under-p p{
+  height: auto;
+  width: auto;
+  overflow-wrap: break-word;
+}
+

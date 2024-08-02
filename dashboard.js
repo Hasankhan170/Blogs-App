@@ -56,8 +56,8 @@ function renderData(){
                 <h4>${item.title}</h4>
              </div>
             </div>
-            <div>
-                 <p>${item.text}</p>
+            <div class ="under-p">
+                 <p class ="under">${item.text}</p>
             </div>
                 
             
