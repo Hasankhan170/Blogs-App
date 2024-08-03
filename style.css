@@ -115,6 +115,13 @@
   margin-bottom: 10px;
  }
 
+ .image{
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
 
  /* login styling  */
 
@@ -231,4 +238,42 @@
   width: auto;
   overflow-wrap: break-word;
 }
+
+/* profile styling  */
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  border-radius: 15px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  height: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border: 2px solid black;
+}
+
+.pro-img{
+  /* margin-bottom: 20px; */
+  width: 150px;
+  border:1px solid gray ;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+
+}
+.img-upload{
+  display: flex;
+  width: 130px;
+}
+
+#upload-btn-img{
+  margin-bottom: 20px;
+}
+
+
+
+
 

@@ -28,6 +28,7 @@ signUpForm.addEventListener('submit', (e) => {
     const user = userCredential.user;
 
     console.log(user);
+    
     alert('User created successfully!')
     localStorage.setItem('name' , firstName.value)
     localStorage.setItem('last' , lastName.value)

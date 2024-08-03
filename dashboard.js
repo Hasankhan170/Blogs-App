@@ -14,12 +14,14 @@ const renderText= document.querySelector('.my-blogs-render');
 const firstName = localStorage.getItem('name')
 const lastName = localStorage.getItem('last')
 
+
 if(!firstName){
     alert("First name not found. Please sign up again.");
 }
 if(!lastName){
     alert("last name not found. Please sign up again.");
 }
+
 
 let arr = []
 
@@ -50,7 +52,6 @@ function renderData(){
         renderText.innerHTML += `
         <div class = "under-rendering">
             <div class = "under-title">
-                <img width = "50px" src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt = "img">
                 <p>User Name : ${item.Name} ${item.last}  || ${formattedDate}</p>
             <div>
                 <h4>${item.title}</h4>
