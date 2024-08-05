@@ -255,13 +255,13 @@
 }
 
 .pro-img{
-  width: 150px;
+  width: 140px;
   border:1px solid gray ;
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  padding: 5px;
-
+  height: 150px;
+  align-items: center;
 }
 .img-upload{
   display: flex;
@@ -270,6 +270,7 @@
 
 #upload-btn-img{
   margin-bottom: 20px;
+  width: 120px;
   background-color: brown;
 }
 .rename{
@@ -305,20 +306,59 @@
   font-weight: bold;
 }
 
+
+/* copy and paste */
+
+.file-upload{
+	height:140px;
+	width:300px;
+  margin: 0 auto;
+	overflow:hidden;
+	position:relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.file-upload input{
+	position:absolute;
+	height:300px;
+	width:400px;
+	left:-200px;
+	top:-200px;
+	background:transparent;
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);  
+}
+.file-upload img{
+	height:100px;
+	width:100px;
+	margin:0px 20px;
+  position: relative;
+}
+.click-btn{
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 0%;
+  bottom: 10px;
+
+}
+.upload-file-btn{
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  
+}
+
 @media (max-width:380px) {
   .profile{
     width: 100%;
     height: auto;
     margin-top: 20px;
   }
-   .pro-img{
-    width: 130px;
-  } 
-  .img-upload{
-    width: 100px;
-  }
-
-
 }
 
 @media (max-width:315px) {
@@ -327,12 +367,6 @@
     height: auto;
     margin-top: 20px;
   }
-  /* .pro-img{
-    width: 80px;
-  }
-  .img-upload{
-    width: 50px;
-  } */
   .all-text p{
     font-size: 12px;
     width: 150px;
